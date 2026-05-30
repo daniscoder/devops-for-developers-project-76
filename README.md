@@ -1,4 +1,7 @@
-# Devops For Developers Project 76
+### Hexlet tests and linter status:
+[![Actions Status](https://github.com/daniscoder/devops-for-developers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/daniscoder/devops-for-developers-project-76/actions)
+
+# Ansible Deploy: Redmine
 
 Деплой приложения Redmine с помощью Ansible на облачную инфраструктуру DigitalOcean.
 
@@ -8,23 +11,31 @@ https://daniscoder.online
 
 ## Требования
 
-* Ansible
+* Ansible 2.10+
 * Make
 
-## Установка зависимостей
+## Установка зависимостей (роли и коллекции)
 
 ```bash
 make install
 ```
 
-## Подготовка серверов
+## Подготовка серверов (установка Docker)
 
 ```bash
 make setup
 ```
 
-## Деплой
+## Деплой приложения
 
 ```bash
 make deploy
+```
+
+## Управление секретами
+
+```bash
+make edit-vault      # редактировать секреты
+make encrypt-vault   # зашифровать файл секретов
+make decrypt-vault   # расшифровать файл секретов
 ```

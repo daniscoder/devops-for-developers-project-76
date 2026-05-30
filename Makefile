@@ -2,13 +2,13 @@ install:
 	ansible-galaxy install -r requirements.yml
 
 setup:
-	ansible-playbook playbook.yml -i inventory.ini
+	ansible-playbook playbook.yml -i inventory.ini --ask-vault-pass
 
 deploy:
 	ansible-playbook deploy.yml -i inventory.ini --ask-vault-pass
 
 edit-vault:
-	ansible-vault edit group_vars/webservers/vault.yml
+	EDITOR=nano ansible-vault edit group_vars/webservers/vault.yml
 
 encrypt-vault:
 	ansible-vault encrypt group_vars/webservers/vault.yml
