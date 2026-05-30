@@ -8,3 +8,11 @@
   roles:
     - geerlingguy.pip
     - geerlingguy.docker
+
+- hosts: webservers
+  become: true
+
+  tasks:
+    - name: Import Datadog Agent role
+      import_role:
+        name: datadog.dd.agent
