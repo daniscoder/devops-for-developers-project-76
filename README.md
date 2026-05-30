@@ -1,2 +1,30 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/daniscoder/devops-for-developers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/daniscoder/devops-for-developers-project-76/actions)
+# Devops For Developers Project 76
+
+Деплой приложения Redmine с помощью Ansible на облачную инфраструктуру DigitalOcean.
+
+## Приложение
+
+https://daniscoder.online
+
+## Требования
+
+* Ansible
+* Make
+
+## Установка зависимостей
+
+```bash
+make install
+```
+
+## Подготовка серверов
+
+```bash
+make setup
+```
+
+## Деплой
+
+```bash
+make deploy
+```

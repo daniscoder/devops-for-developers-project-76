@@ -1,0 +1,18 @@
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Copy env file
+      template:
+        src: templates/redmine.env.j2
+        dest: /root/redmine.env
+
+    - name: Run Redmine container
+      community.docker.docker_container:
+        name: redmine
+        image: redmine
+        state: started
+        restart_policy: always
+        ports:
+          - "{{ redmine_port }}:3000"
+        env_file: /root/redmine.env
